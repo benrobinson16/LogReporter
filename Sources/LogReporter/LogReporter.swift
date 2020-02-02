@@ -3,7 +3,7 @@
 
 import Foundation
 
-struct LogManager {
+public struct LogManager {
     
     /// Log the current filename and function, with an optional extra message. Call this with no arguments to simply print the current file and function. Log messages will include an Emoji selected from a list in the function, based on the hash of the filename, to make it easier to see which file a message comes from.
     /// - Parameter message: Optional message to include
