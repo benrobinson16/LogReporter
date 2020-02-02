@@ -1,3 +1,5 @@
+import Foundation
+
 struct LogReporter {
     
     /// Log the current filename and function, with an optional extra message. Call this with no arguments to simply print the current file and function. Log messages will include an Emoji selected from a list in the function, based on the hash of the filename, to make it easier to see which file a message comes from.
@@ -27,7 +29,7 @@ struct LogReporter {
     ///   - function: Don't use, Swift will fill in the function name
     ///   - line: Don't use, Swift will fill in the line number
     static func logError(_ error: Error, file: String = #file, function: String = #function, line: Int = #line) -> Void {
-        logMilestone(error.localizedDescription, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
+        log(error.localizedDescription, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
     }
     
     /// Convenience to log an error using `log`-style logging with file location and an Emoji
@@ -37,7 +39,7 @@ struct LogReporter {
     ///   - function: Don't use, Swift will fill in the function name
     ///   - line: Don't use, Swift will fill in the line number
     static func logError(_ error: String, file: String = #file, function: String = #function, line: Int = #line) -> Void {
-        logMilestone(error, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
+        log(error, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
     }
     
 }
