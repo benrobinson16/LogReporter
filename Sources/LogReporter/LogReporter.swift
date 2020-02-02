@@ -20,7 +20,7 @@ struct LogReporter {
         #endif
     }
     
-    /// Convenience to log an error using `logMilestone`-style logging with file location and an Emoji
+    /// Convenience to log an error using `log`-style logging with file location and an Emoji
     /// - Parameters:
     ///   - error: Any `Error`
     ///   - file: Don't use, Swift will fill in the file name
@@ -28,6 +28,16 @@ struct LogReporter {
     ///   - line: Don't use, Swift will fill in the line number
     static func logError(_ error: Error, file: String = #file, function: String = #function, line: Int = #line) -> Void {
         logMilestone(error.localizedDescription, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
+    }
+    
+    /// Convenience to log an error using `log`-style logging with file location and an Emoji
+    /// - Parameters:
+    ///   - error: Any `Error`
+    ///   - file: Don't use, Swift will fill in the file name
+    ///   - function: Don't use, Swift will fill in the function name
+    ///   - line: Don't use, Swift will fill in the line number
+    static func logError(_ error: String, file: String = #file, function: String = #function, line: Int = #line) -> Void {
+        logMilestone(error, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
     }
     
 }
