@@ -18,9 +18,9 @@ public struct LogManager {
         let logEmojis = ["😀","😎","😱","😈","👺","👽","👾","🤖","🎃","👍","👁","🧠","🎒","🧤","🐶","🐱","🐭","🐹","🦊","🐻","🐨","🐵","🦄","🦋","🌈","🔥","💥","⭐️","🍉","🥝","🌽","🍔","🍿","🎹","🎁","❤️","🧡","💛","💚","💙","💜","🔔"]
         let logEmoji = logEmojis[abs(file.hashValue % logEmojis.count)]
         if let message = message {
-            print("\(prefix) \(logEmoji) \((file as NSString).lastPathComponent):\(line) \(function): \(message) \(suffix)")
+            print("\(prefix) \(logEmoji) \((file as NSString).lastPathComponent): \(line) \(function)() \(message) \(suffix)")
         } else {
-            print("\(prefix) \(logEmoji) \((file as NSString).lastPathComponent):\(line) \(function) \(suffix)")
+            print("\(prefix) \(logEmoji) \((file as NSString).lastPathComponent): \(line) \(function)() \(suffix)")
         }
         #endif
     }
