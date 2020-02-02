@@ -1,3 +1,6 @@
+// Created 2/2/2020
+// Credit to atomicbird
+
 import Foundation
 
 struct LogReporter {
