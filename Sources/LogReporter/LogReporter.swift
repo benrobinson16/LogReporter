@@ -12,7 +12,7 @@ public struct LogManager {
     /// - Parameter line: Don't use, Swift will fill in the line number
     /// - Parameter prefix: Don't use, unless you really really want to
     /// - Parameter suffix: Don't use, unless you really really want to
-    static func log(_ message: String? = nil, file: String = #file, function: String = #function, line: Int = #line, prefix: String = "Milestone:", suffix: String = "") -> Void {
+    public static func log(_ message: String? = nil, file: String = #file, function: String = #function, line: Int = #line, prefix: String = "Milestone:", suffix: String = "") -> Void {
         #if DEBUG
         // Feel free to change the list of Emojis, but don't make it shorter, because a longer list is better.
         let logEmojis = ["😀","😎","😱","😈","👺","👽","👾","🤖","🎃","👍","👁","🧠","🎒","🧤","🐶","🐱","🐭","🐹","🦊","🐻","🐨","🐵","🦄","🦋","🌈","🔥","💥","⭐️","🍉","🥝","🌽","🍔","🍿","🎹","🎁","❤️","🧡","💛","💚","💙","💜","🔔"]
@@ -31,7 +31,7 @@ public struct LogManager {
     ///   - file: Don't use, Swift will fill in the file name
     ///   - function: Don't use, Swift will fill in the function name
     ///   - line: Don't use, Swift will fill in the line number
-    static func logError(_ error: Error, file: String = #file, function: String = #function, line: Int = #line) -> Void {
+    public static func logError(_ error: Error, file: String = #file, function: String = #function, line: Int = #line) -> Void {
         log(error.localizedDescription, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
     }
     
@@ -41,7 +41,7 @@ public struct LogManager {
     ///   - file: Don't use, Swift will fill in the file name
     ///   - function: Don't use, Swift will fill in the function name
     ///   - line: Don't use, Swift will fill in the line number
-    static func logError(_ error: String, file: String = #file, function: String = #function, line: Int = #line) -> Void {
+    public static func logError(_ error: String, file: String = #file, function: String = #function, line: Int = #line) -> Void {
         log(error, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
     }
     
