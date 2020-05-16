@@ -32,7 +32,7 @@ public struct LogManager {
     ///   - function: Don't use, Swift will fill in the function name
     ///   - line: Don't use, Swift will fill in the line number
     public static func logError(_ error: Error, file: String = #file, function: String = #function, line: Int = #line) -> Void {
-        log(error.localizedDescription, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
+        log(error.localizedDescription, file: file, function: function, line: line, prefix: "\n\n🚨🚨🚨 ERROR:", suffix: " 🚨🚨🚨\n\n")
     }
     
     /// Convenience to log an error using `log`-style logging with file location and an Emoji
@@ -42,7 +42,7 @@ public struct LogManager {
     ///   - function: Don't use, Swift will fill in the function name
     ///   - line: Don't use, Swift will fill in the line number
     public static func logError(_ error: String, file: String = #file, function: String = #function, line: Int = #line) -> Void {
-        log(error, file: file, function: function, line: line, prefix: "\nERROR:", suffix: "\n")
+        log(error, file: file, function: function, line: line, prefix: "\n\n🚨🚨🚨 ERROR:", suffix: "🚨🚨🚨\n\n")
     }
     
 }
